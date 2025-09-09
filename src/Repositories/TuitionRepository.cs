@@ -14,9 +14,9 @@ namespace src.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Tuition>> GetAllTuitionByStudentId(string studentId)
+        public async Task<IEnumerable<Tuition>> GetAllTuitionUnpaidByStudentId(string studentId)
         {
-            return await _context.Tuitions.Where(Tuition => Tuition.StudentId == studentId).ToListAsync();
+            return await _context.Tuitions.Where(Tuition => Tuition.StudentId == studentId && Tuition.Status == "Unpaid").ToListAsync();
         }
 
         public async Task<Tuition> GetTuitionByIdAsync(Guid tuitionId)

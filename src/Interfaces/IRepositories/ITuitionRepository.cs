@@ -5,6 +5,6 @@ namespace src.Interfaces.IRepositories
     public interface ITuitionRepository
     {
         Task<Tuition> GetTuitionByIdAsync(Guid tuitionId);
-        Task<IEnumerable<Tuition>> GetAllTuitionByStudentId(string studentId);
+        Task<IEnumerable<Tuition>> GetAllTuitionUnpaidByStudentId(string studentId);
     }
 }

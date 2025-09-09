@@ -18,7 +18,7 @@ namespace src.Services
 
         public async Task<IEnumerable<GetTuitionResponseDto>> GetAllTuitionByStudentId(string studentId)
         {
-            var tuitions = await _tuitionRepository.GetAllTuitionByStudentId(studentId);
+            var tuitions = await _tuitionRepository.GetAllTuitionUnpaidByStudentId(studentId);
 
             var result = tuitions.Select(t => new GetTuitionResponseDto
             {
